@@ -1,8 +1,11 @@
-import { createUser, deleteUser } from "@/lib/actions/user.actions";
-import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
+import { createUser, deleteUser, updateUser } from "@/lib/actions/user.actions";
+import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook } from "svix";
+import { clerkClient } from '@clerk/clerk-sdk-node';
+
+
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
@@ -69,13 +72,14 @@ export async function POST(req: Request) {
     };
     const newUser = await createUser(user);
 
-  if (newUser) {
-      await clerkClient.users.updateUserMetadata(id, {
-        publicMetadata: {
-          userId: newUser._id,
-        },
-      });
-    }
+if (newUser) {
+  await clerkClient.users.updateUserMetadata(newUser.clerkId, {
+    publicMetadata: {
+      userId: newUser._id,
+    },
+  });
+}
+
     return NextResponse.json({ message: "OK", user: newUser });
   }
 
@@ -91,7 +95,7 @@ export async function POST(req: Request) {
       lastName: last_name || "", // Match the expected 'lastName' key
       photo: image_url || "", // Safe access with fallback
     };
-    const updatedUser = await updateUser(user);
+    const updatedUser = await updateUser(id, user);
     return NextResponse.json({ message: "OK", user: updatedUser });
   }
 
