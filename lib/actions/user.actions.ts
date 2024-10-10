@@ -1,4 +1,4 @@
-'user server'
+"user server"
 
 import { CreateUserParams, UpdateUserParams } from "@/types"
 import { handleError } from "../utils"
