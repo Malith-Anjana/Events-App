@@ -66,7 +66,7 @@ export async function POST(req: Request) {
     const user = {
       clerkId: id,
       email: email_addresses[0]?.email_address || "", // Safe access with fallback
-      username: email_addresses[0]?.email_address || "", // Safe access with fallback
+      username: username || "", // Safe access with fallback
       firstName: first_name || "", // Match the expected 'firstName' key
       lastName: last_name || "", // Match the expected 'lastName' key
       photo: image_url || "", // Safe access with fallback
