@@ -57,12 +57,11 @@ export async function POST(req: Request) {
   // For this guide, you simply log the payload to the console
   const { id } = evt.data;
   const eventType = evt.type;
-
+  console.log("***This is Event Tyepe*** : ", evt.type);
   if (eventType === "user.created") {
-    console.log("**User created log** ", evt.data)
     const { id, email_addresses, image_url, first_name, last_name, username } =
-      evt.data;
-
+    evt.data;
+    
     const user = {
       clerkId: id,
       email: email_addresses[0]?.email_address || "", // Safe access with fallback
@@ -71,6 +70,7 @@ export async function POST(req: Request) {
       lastName: last_name || "", // Match the expected 'lastName' key
       photo: image_url || "", // Safe access with fallback
     };
+    console.log("**This is new user** ", user)
     const newUser = await createUser(user);
 
 if (newUser) {
