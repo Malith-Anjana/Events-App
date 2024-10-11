@@ -1,7 +1,7 @@
 import { Document, model, models, Schema } from 'mongoose';
 
 export interface IEvent extends Document {
-    _id:String;
+    _id:string;
     title: string;                        // Required string
     description?: string;                 // Optional string
     location?: string;                    // Optional string
@@ -12,8 +12,8 @@ export interface IEvent extends Document {
     price?: string;                       // Optional string
     isFree: boolean;                      // Boolean with default value
     url?: string;                         // Optional string
-    category: {_id: String, name: String};      // Reference to Category collection
-    organizer: { _id: String, firstName: String, lastName:String }   // Reference to User collection
+    category: {_id: string, name: string};      // Reference to Category collection
+    organizer: { _id: string, firstName: string, lastName:string }   // Reference to User collection
   }
 
 const EventSchema = new Schema({

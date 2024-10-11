@@ -7,3 +7,4 @@ This mongo db connection is done to prevent creating multiple database connectio
 
 This code uses ES6 modules (import and export default), which is standard in modern JavaScript and more commonly used in modern React/Next.js apps or TypeScript projects.(intead of CommonJS (require, module.exports))
 
+UploadThing.com use my github acc
