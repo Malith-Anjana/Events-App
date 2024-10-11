@@ -14,7 +14,6 @@ export const createUser = async(user: CreateUserParams)=> {
 
          return JSON.parse(JSON.stringify(newUser));
     } catch (error) {
-      console.log("***Hit the catch block***")
         handleError(error)
     }
 }
