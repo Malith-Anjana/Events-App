@@ -1,5 +1,6 @@
 Shadcn for UIs
 malith.insight@gmail for clerk authentication, mongodb
+malithanjana97@gmailcom 
 
 SEVER-NODEJS
 This mongo db connection is done to prevent creating multiple database connections. In serverless environments (like AWS Lambda, Vercel, etc.), new instances of the application may start frequently, leading to excessive connections to MongoDB if not handled properly.
