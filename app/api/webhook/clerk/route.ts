@@ -62,6 +62,7 @@ export async function POST(req: Request) {
     const { id, email_addresses, image_url, first_name, last_name, username } =
     evt.data;
     
+    console.log("**This is new user hit** ", id, email_addresses, image_url, first_name, last_name, username )
     const user = {
       clerkId: id,
       email: email_addresses[0]?.email_address || "", // Safe access with fallback
@@ -70,7 +71,6 @@ export async function POST(req: Request) {
       lastName: last_name || "", // Match the expected 'lastName' key
       photo: image_url || "", // Safe access with fallback
     };
-    console.log("**This is new user hit** ")
     console.log("**This is new user** ", user)
     const newUser = await createUser(user);
 
