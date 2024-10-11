@@ -70,6 +70,7 @@ export async function POST(req: Request) {
       lastName: last_name || "", // Match the expected 'lastName' key
       photo: image_url || "", // Safe access with fallback
     };
+    console.log("**This is new user hit** ")
     console.log("**This is new user** ", user)
     const newUser = await createUser(user);
 
