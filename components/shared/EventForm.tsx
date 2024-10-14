@@ -42,7 +42,6 @@ const EventForm = ({ userId, type, event, eventId }: EventsFormProps) => {
   startDateTime: new Date(event.startDateTime),
   endDateTime: new Date(event.endDateTime)
   } : eventDefaultValues;
-  console.log(initialValues)
   const [files, setFiles] = useState<File[]>([]);
 
   const router = useRouter();
