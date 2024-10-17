@@ -9,7 +9,7 @@ export interface IEvent extends Document {
     imageUrl: string;                     // Required string
     startDateTime: Date;                  // Date with default value
     endDateTime: Date;                    // Date with default value
-    price?: string;                       // Optional string
+    price: string;                       // Optional string
     isFree: boolean;                      // Boolean with default value
     url?: string;                         // Optional string
     category: {_id: string, name: string};      // Reference to Category collection

@@ -29,7 +29,7 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
           layout="responsive"
           height={450}
           width={800}
-          objectFit="contain"
+      
         />
       </Link>
       {/* IS EVENT CREATOR */}

@@ -10,8 +10,6 @@ type ErrorProps = {
 
 export default function Error({error, reset, statusCode }: ErrorProps) {
   const router = useRouter();
-  console.log("***The error message is***")
-  console.log(error.message)
   return (
     <div className="grid h-screen px-4 bg-white place-content-center">
       <div className="text-center">
