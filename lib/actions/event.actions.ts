@@ -54,35 +54,34 @@ export const getEventByID = async (eventId: string) => {
   }
 };
 
-export const getAllEvents = async ({
-  query,
-  limit = 6,
-  page,
-  category,
-}: GetAllEventsParams) => {
+// GET ALL EVENTS
+export async function getAllEvents({ query, limit = 6, page, category }: GetAllEventsParams) {
   try {
-    await connectToDatabase();
+    await connectToDatabase()
 
-    const conditions = {};
+    const titleCondition = query ? { title: { $regex: query, $options: 'i' } } : {}
+    const categoryCondition = category ? await getCategoryByName(category) : null
+    const conditions = {
+      $and: [titleCondition, categoryCondition ? { category: categoryCondition._id } : {}],
+    }
 
+    const skipAmount = (Number(page) - 1) * limit
     const eventsQuery = Event.find(conditions)
-      .sort({ createdAt: "desc" })
-      .skip(0)
-      .limit(limit);
-      const events = await populateEvent(eventsQuery);
-      const eventsCount = await Event.countDocuments(conditions);
+      .sort({ createdAt: 'desc' })
+      .skip(skipAmount)
+      .limit(limit)
 
-    if (!events) throw new Error("No Events Found");
+    const events = await populateEvent(eventsQuery)
+    const eventsCount = await Event.countDocuments(conditions)
 
     return {
       data: JSON.parse(JSON.stringify(events)),
       totalPages: Math.ceil(eventsCount / limit),
-    };
-
+    }
   } catch (error) {
-    handleError(error);
+    handleError(error)
   }
-};
+}
 
 export const deleteEvent = async ({eventId, path, userId} : DeleteEventParams) => {
   try {
