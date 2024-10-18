@@ -23,7 +23,6 @@ const Collection = ({
   collectionType,
   urlParamName,
 }: CollectionProps) => {
-  console.log(data)
   return (
     <>
       {data && data.length > 0 ? (

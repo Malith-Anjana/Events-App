@@ -7,6 +7,10 @@ import User from "../database/models/user.model";
 import { handleError } from "../utils";
 import { CreateEventParams, DeleteEventParams, GetAllEventsParams, GetEventsByUserParams, GetRelatedEventsByCategoryParams, UpdateEventParams } from "./../../types/index";
 
+const getCategoryByName = async (name: string) => {
+  return Category.findOne({ name: { $regex: name, $options: 'i' } })
+}
+
 const populateEvent = async (query: any) => {
   return query
     .populate({
