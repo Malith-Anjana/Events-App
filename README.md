@@ -8,7 +8,7 @@ Event App is a user-friendly platform where users can seamlessly explore, publis
 ## Deploy On
 https://events-app-orcin.vercel.app/
 
-### Technologies Used
+## Technologies Used
 
 - **Next.js** - Framework for building fast, modern web applications
 - **TypeScript** - Enhances JavaScript with type safety
@@ -25,5 +25,7 @@ To get started with GameHub, follow these steps:
 2. Run `yarn install` to install the required dependencies.
 3. Complete all the env variables. 
 4. Run `yarn run dev` to start the web server. 
+
+---
 
 Reffer the  https://youtu.be/zgGhzuBZOQg?si=mOPecMSGNlhzFl4O
