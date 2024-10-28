@@ -1,12 +1,28 @@
-Shadcn for UIs
-malith.insight@gmail for clerk authentication, mongodb
-malithanjana97@gmailcom 
+![image](https://github.com/user-attachments/assets/2eae9ceb-505b-43df-af1b-facbd0f3928c)
 
-SEVER-NODEJS
-This mongo db connection is done to prevent creating multiple database connections. In serverless environments (like AWS Lambda, Vercel, etc.), new instances of the application may start frequently, leading to excessive connections to MongoDB if not handled properly.
+---
+# Events App
+Event App is a user-friendly platform where users can seamlessly explore, publish, and purchase events. After logging in, users can browse a wide range of events, search for ones that match their interests, and easily purchase tickets. Additionally, users have the option to publish their own events, making it a versatile tool for both event-goers and organizers.
+---
+## Deploy On
+https://events-app-orcin.vercel.app/
+---
+### Technologies Used
 
-This code uses ES6 modules (import and export default), which is standard in modern JavaScript and more commonly used in modern React/Next.js apps or TypeScript projects.(intead of CommonJS (require, module.exports))
+- **Next.js** - Framework for building fast, modern web applications
+- **TypeScript** - Enhances JavaScript with type safety
+- **Stripe** - Secure payment processing
+- **Clerk** - Authentication and user management
+- **ShadCN UI** - Component library for a responsive, accessible UI
+- **Node.js** - Backend runtime environment
+- **MongoDB** - NoSQL database for efficient data management
+---  
+## Getting Started
+To get started with GameHub, follow these steps:
 
-UploadThing.com use my github acc
-
-stripe use malith.insight@gmail.com
+1. Clone this repository to your local machine.
+2. Run `yarn install` to install the required dependencies.
+3. Complete all the env variables. 
+4. Run `yarn run dev` to start the web server. 
+---
+Reffer the  https://youtu.be/zgGhzuBZOQg?si=mOPecMSGNlhzFl4O
